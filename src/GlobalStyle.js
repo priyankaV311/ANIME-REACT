@@ -13,7 +13,10 @@ const GlobalStyle = createGlobalStyle`
         background-color: red;
     }
 `;
+// export default GlobalStyle;
+
 export default GlobalStyle;
+
 
 
 
