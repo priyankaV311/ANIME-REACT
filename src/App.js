@@ -3,6 +3,7 @@ import Popular from "./components/Popular";
 import { useGlobalContext } from "./context/global";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AnimeItem from "./components/AnimeItem";
+import HomePage from "./components/HomePage";
 // import { BrowserRouter } from 'react-router-dom';
 
 function App() {
@@ -16,7 +17,9 @@ function App() {
       <Popular/>
     </div> */}
       <Routes>
-        <Route path='/' element={<Popular />} />
+        {/* <Route path='/' element={<Popular />} /> */}
+        <Route path='/' element={<HomePage />} />
+
         <Route path='/anime/:id' element={<AnimeItem />} />
       </Routes>
     </BrowserRouter>
