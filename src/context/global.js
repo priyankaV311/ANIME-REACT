@@ -86,7 +86,9 @@ export const GlobalContextProvider = ({ children }) => {
     // search anime
     const searchAnime = async (anime) => {
         dispatch({ type: LOADING });
-        const response = await fetch(`${baseUrl}/search/anime?q=${anime}&order_by=popularity&sort=asc&sfw`);
+        // const response = await fetch(`${baseUrl}/search/anime?q=${anime}&order_by=popularity&sort=asc&sfw`);
+        const response = await fetch(`${baseUrl}/anime?q=${anime}&order_by=popularity&sort=asc&sfw`);
+
         const data = await response.json();
         dispatch({ type: SEARCH, payload: data.data });
     }
@@ -101,7 +103,10 @@ export const GlobalContextProvider = ({ children }) => {
             handleChange,
             handleSubmit,
             searchAnime,
-            search
+            // search
+            search,
+            getPopularAnime,
+            getUpcomingAnime
         }}>
             {children}
         </GlobalContext.Provider>
