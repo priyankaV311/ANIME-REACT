@@ -11,75 +11,75 @@ function HomePage() {
     // const { handleSubmit, search, searchAnime, handleChange } = useGlobalContext();
     const { handleSubmit, search, searchAnime, handleChange, getPopularAnime, getAiringAnime, getUpcomingAnime } = useGlobalContext();
 
-    const [ rendered, setRendered ] = useState('popular');
+    const [rendered, setRendered] = useState('popular');
     const switchComponent = () => {
-        switch(rendered) {
-            case 'popular': 
+        switch (rendered) {
+            case 'popular':
                 return <Popular rendered={rendered} />
-                case 'airing':
-                    // return <Popular rendered={rendered} />
-                    return <Airing rendered={rendered} />
+            case 'airing':
+                // return <Popular rendered={rendered} />
+                return <Airing rendered={rendered} />
 
-                    case 'upcoming':
-                        return <upcoming rendered={rendered} />
+            case 'upcoming':
+                return <upcoming rendered={rendered} />
             default:
-                return <Popular rendered={rendered} />   
+                return <Popular rendered={rendered} />
         }
     }
-  return (
-    // <div>
-            <HomepageStyle>
+    return (
+        // <div>
+        <HomepageStyle>
 
-      <header>
-        <div className='logo'>
-            <h1>
-                { rendered === 'popular' ? 'Popular Anime' : 
-                    rendered === 'airing' ? 'Airing Anime' : 'Upcoming Anime'
-                }
-            </h1>
-        </div>
-        <div className='search-container'>
-            <div className='filter-btn popular-filter'>
-                <button onClick={() => {
-                    // setRendered('popular')
-                    setRendered('popular');
-                    getPopularAnime();
-                // }}>Popular</button>
-            }}>Popular<i class="fa-solid fa-fire"></i></button>
-
-            </div>    
-            {/* <form action='' className='search-form'> */}
-            <form action='' className='search-form' onSubmit={handleSubmit}>
-
-                <div className='input-control'>
-                    <input type='text' placeholder='Search Anime...' value={search} onChange={handleChange} />
-                    {/* <button type='submit' onClick={handleSubmit}>Search</button> */}
-                    <button type='submit'>Search</button>
+            <header>
+                <div className='logo'>
+                    <h1>
+                        {rendered === 'popular' ? 'Popular Anime' :
+                            rendered === 'airing' ? 'Airing Anime' : 'Upcoming Anime'
+                        }
+                    </h1>
                 </div>
-                <div className='search-results'>
+                <div className='search-container'>
+                    <div className='filter-btn popular-filter'>
+                        <button onClick={() => {
+                            // setRendered('popular')
+                            setRendered('popular');
+                            getPopularAnime();
+                            // }}>Popular<i class="fa-solid fa-fire"></i></button>
+                        }}>Popular<i className="fa-solid fa-fire"></i></button>
+
+                    </div>
+                    {/* <form action='' className='search-form'> */}
+                    <form action='' className='search-form' onSubmit={handleSubmit}>
+
+                        <div className='input-control'>
+                            <input type='text' placeholder='Search Anime...' value={search} onChange={handleChange} />
+                            {/* <button type='submit' onClick={handleSubmit}>Search</button> */}
+                            <button type='submit'>Search</button>
+                        </div>
+                        <div className='search-results'>
+                        </div>
+
+                    </form>
+                    <div className='filter-btn airing-filter'>
+                        <button onClick={() => {
+                            setRendered('airing')
+                            getAiringAnime();
+                        }}>Airing</button>
+                    </div>
+                    <div className='filter-btn upcoming-filter'>
+                        <button onClick={() => {
+                            // setRendered('upcoming')
+                            setRendered('upcoming');
+                            getUpcomingAnime();
+
+                        }}>Upcoming</button>
+                    </div>
                 </div>
-
-            </form>
-            <div className='filter-btn airing-filter'>
-                <button onClick={() => {
-                    setRendered('airing')
-                    getAiringAnime();
-                }}>Airing</button>
-            </div>
-            <div className='filter-btn upcoming-filter'>
-                <button onClick={() => {
-                    // setRendered('upcoming')
-                    setRendered('upcoming');
-                    getUpcomingAnime();
-
-                }}>Upcoming</button>
-            </div>
-        </div>
-      </header>
-    {/* </div> */}
-    { switchComponent() }
-    </HomepageStyle>
-  )
+            </header>
+            {/* </div> */}
+            {switchComponent()}
+        </HomepageStyle>
+    )
 }
 
 // export default HomePage

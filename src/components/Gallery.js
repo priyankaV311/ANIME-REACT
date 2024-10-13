@@ -23,10 +23,11 @@ useEffect(() => {
   return (
     <GalleryStyled>
       <div className='back'>
-        {/* <Link to="/">back</Link> */}
-
+        
         <Link to="/">
-        <i class="fa-solid fa-arrow-left"></i>
+        {/* <i class="fa-solid fa-arrow-left"></i> */}
+        <i className="fa-solid fa-arrow-left"></i>
+
         Back to home
         </Link>
       </div>
