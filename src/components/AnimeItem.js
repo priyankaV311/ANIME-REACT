@@ -60,8 +60,10 @@ function AnimeItem() {
       </div>
       <h3 className='title'>Trailer</h3>
       <div className='trailer-con'>
-          { trailer?.embed_url 
-            && 
+          {/* { trailer?.embed_url 
+            &&  */}
+                      { trailer?.embed_url ?
+
           <iframe 
             src={trailer?.embed_url} 
             title="Inline frame example" 
@@ -69,7 +71,10 @@ function AnimeItem() {
             height="450"
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' 
             allowFullScreen>
-          </iframe> }
+          {/* </iframe> } */}
+          </iframe> :
+          <h3>Trailor not available</h3>
+           }
       </div>
       <h3 className='title'>Characters</h3>
       <div className='characters'>

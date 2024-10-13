@@ -10,9 +10,20 @@ const GlobalStyle = createGlobalStyle`
         font-family: "Inter", sans-serif;
     }
     body {
-        // background-color: red;
-        color: #6c7983;
-        font-size: 1.2rem;
+        // color: #6c7983;
+        // font-size: 1.2rem;
+         color: #6c7983;
+    font-size: 1.2rem;
+    &::-webkit-scrollbar {
+        width: 7px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: #27ae60;
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: #ededed;
+    }
     }
 `;
 // export default GlobalStyle;
