@@ -44,7 +44,9 @@ function HomePage() {
                     // setRendered('popular')
                     setRendered('popular');
                     getPopularAnime();
-                }}>Popular</button>
+                // }}>Popular</button>
+            }}>Popular<i class="fa-solid fa-fire"></i></button>
+
             </div>    
             {/* <form action='' className='search-form'> */}
             <form action='' className='search-form' onSubmit={handleSubmit}>

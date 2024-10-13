@@ -17,13 +17,18 @@ const handleImageClick = (i) => {
 
 useEffect(() => {
   getAnimePictures(id);
-},  []); 
+// },  []); 
+}, [id]);
    
   return (
     <GalleryStyled>
-      {/* Gallery */}
       <div className='back'>
-        <Link to="/">back</Link>
+        {/* <Link to="/">back</Link> */}
+
+        <Link to="/">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back to home
+        </Link>
       </div>
       <div className='big-image'>
         <img src={pictures[index]?.jpg.image_url} alt=''/>
@@ -68,6 +73,9 @@ background-color: #ededed;
         font-weight: 600;
         text-decoration: none;
         color: #eb5757;
+        display: flex;
+        aling-item: center;
+        gap: .5rem;
     }
   }
   .big-image {
